@@ -4,12 +4,11 @@ import java.io.InputStreamReader;
 
 public class SSAFYChangeMembersSeat {
 	static String [] member = {"박영규", "김준섭", "구본민", "김다윤", "김동학", "김보라", "김상민",
-			"김은지", "이민형", "박소현", "안상준", "양성주", "양희태",
-			"이준혁", "이창헌", "이현정"};
+			"김은지", "이민형", "박소현", "안상준", "양성주", "양희태", "이준혁", "이창헌", "이현정", "이수민"};
 	static int memberCnt = member.length;
 	static boolean satMember[] = new boolean [memberCnt];
 	
-	static String [] mentor = {"이수민", "이예원", "임지은", "전성수", "조민준", "조한빈", "천우진", "최유진", "최홍준"};
+	static String [] mentor = {"이예원", "임지은", "전성수", "조민준", "조한빈", "천우진", "최유진", "최홍준"};
 	static int mentorCnt = mentor.length;
 	static boolean satMentor[] = new boolean [mentorCnt];
 	
