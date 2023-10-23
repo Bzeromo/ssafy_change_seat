@@ -139,7 +139,7 @@ public class SSAFYChangeMembersSeat {
 			option = Integer.parseInt(br.readLine());
 		}
 		System.out.println("\n\n\n(   프로그램이 종료되었습니다. 이용해주셔서 감사합니다.   )\n\n\n");
-		System.out.println("GitHub Repogitory: ");
+		System.out.println("GitHub Repogitory: https://github.com/Bzeromo/ssafy_change_seat");
 		System.out.println("Bzeromo Velog: https://velog.io/@bzeromo");
 		System.out.println("개발자 커피 사주기: 945802-00-283272 국민");
 		br.close();
