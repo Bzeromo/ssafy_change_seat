@@ -3,12 +3,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class SSAFYChangeMembersSeat {
-	static String [] member = {"박영규", "김준섭", "구본민", "김다윤", "김동학", "김보라", "김상민",
-			"김은지", "이민형", "박소현", "안상준", "양성주", "양희태", "이준혁", "이창헌", "이현정"};
+	static String [] member = {"이예원", "천우진", "구본민", "김다윤", "김동학", "김보라", "조민준",
+			"김은지", "전성수", "박소현", "이수민", "양성주", "양희태", "이준혁", "이창헌", "최홍준"};
 	static int memberCnt = member.length;
 	static boolean satMember[] = new boolean [memberCnt];
 	
-	static String [] mentor = {"이예원", "임지은", "전성수", "조민준", "조한빈", "천우진", "최유진", "최홍준", "이수민"};
+	static String [] mentor = {"박영규", "임지은", "이민형", "김상민", "조한빈", "김준섭", "최유진", "이현정", "안상준"};
 	static int mentorCnt = mentor.length;
 	static boolean satMentor[] = new boolean [mentorCnt];
 	
@@ -19,8 +19,8 @@ public class SSAFYChangeMembersSeat {
 	//3자리까지 비울 수 있습니다.
 	//멘토의 자리는 비우지 마세요!
 	static int emptySeat1 = 10;
-	static int emptySeat2 = 4;
-	static int emptySeat3 = 19;
+	static int emptySeat2 = 15;
+	static int emptySeat3 = 16;
 	
 	static {
 		if(emptySeat1 < emptySeat2 && emptySeat2 < emptySeat3) {
@@ -50,13 +50,13 @@ public class SSAFYChangeMembersSeat {
 		int option = 0;
 		
 		while(option != 3) {
-			System.out.println("----------------------------------*SSAFY 자리 바꾸기 Ver1.1*-----------------------------------------");
+			System.out.println("----------------------------------*SSAFY 자리 바꾸기 Ver1.2*-----------------------------------------");
 			System.out.println("------------------------------------[Made by Bzeromo]--------------------------------------------");
-			System.out.println("----------------------------(실행 전 member와 mentor 입력을 완료해주세요.)----------------------------------");
-			System.out.println("-- 1. 기본형 자리 바꾸기                                                                                                                                                                               --");
-			System.out.println("-- 2. 멘토배치형 자리 바꾸기                                                                                                                                                                         --");
-			System.out.println("-- 3. 나가기                                                                                                                                                                                                --");
-			System.out.println("----------------------------------원하는 옵션의 번호를 입력해주세요.-----------------------------------------");
+			System.out.println("----------------------------(실행 전 member와 mentor 입력을 완료해주세요.)---------------------------------");
+			System.out.println("-- 1. 기본형 자리 바꾸기                                                                                                                                      --");
+			System.out.println("-- 2. 멘토배치형 자리 바꾸기                                                                                                                                 --");
+			System.out.println("-- 3. 나가기                                                                                                                                                     --");
+			System.out.println("----------------------------------원하는 옵션의 번호를 입력해주세요.---------------------------------------");
 			System.out.println("-------------------------------------------------------------------------------------------------");
 			System.out.print(">> ");
 			
@@ -88,7 +88,7 @@ public class SSAFYChangeMembersSeat {
 						
 						if(num == emptySeat1-1 && !emptySeatUse1) {
 							
-							sb.append("         |");
+							sb.append("          |");
 							
 							System.out.println(num);
 							n++;
@@ -98,7 +98,7 @@ public class SSAFYChangeMembersSeat {
 						
 						if(num == emptySeat2-1 && !emptySeatUse2) {
 							
-							sb.append("         |");
+							sb.append("          |");
 							
 							System.out.println(num);
 							n++;
@@ -108,7 +108,7 @@ public class SSAFYChangeMembersSeat {
 						
 						if(num == emptySeat3-1 && !emptySeatUse3) {
 							
-							sb.append("         |");
+							sb.append("          |");
 							
 							n++;
 							emptySeatUse3 = true;
@@ -143,7 +143,7 @@ public class SSAFYChangeMembersSeat {
 							if(num == emptySeat1-1 && !emptySeatUse1) {
 								if(n == 3) sb.append("          |");
 								
-								sb.append("         |");
+								sb.append("          |");
 								
 								n++;
 								seatCnt++;
@@ -154,7 +154,7 @@ public class SSAFYChangeMembersSeat {
 							if(num == emptySeat2-1 && !emptySeatUse2) {
 								if(n == 3) sb.append("          |");
 
-								sb.append("         |");
+								sb.append("          |");
 								
 								n++;
 								seatCnt++;
@@ -165,7 +165,7 @@ public class SSAFYChangeMembersSeat {
 							if(num == emptySeat3-1 && !emptySeatUse3) {
 								if(n == 3) sb.append("          |");
 
-								sb.append("         |");
+								sb.append("          |");
 								
 								n++;
 								seatCnt++;
@@ -175,11 +175,7 @@ public class SSAFYChangeMembersSeat {
 							
 							int memberNum = (int)(Math.random() * memberCnt);
 							
-							if(satMember[memberNum] && num > memberCnt) {
-								for(int j = 0; j < satMember.length; j++) {
-									if(!satMember[j]) continue loop;
-								}
-								
+							if(satMember[memberNum] && num-mentorCnt >= memberCnt) {
 								for(int j = 0; j < satMentor.length; j++) {
 									if(!satMentor[j]) {
 										sb.append("   ").append(mentor[j]).append("     |");
@@ -189,6 +185,8 @@ public class SSAFYChangeMembersSeat {
 									
 								}
 							}
+							
+							if(satMember[memberNum]) continue;
 							
 							if(n == 3) sb.append("          |");
 							
@@ -201,7 +199,7 @@ public class SSAFYChangeMembersSeat {
 							if(num == emptySeat1-1 && !emptySeatUse1) {
 								if(n == 3) sb.append("          |");
 								
-								sb.append("         |");
+								sb.append("          |");
 								
 								n++;
 								seatCnt = 0;
@@ -212,7 +210,7 @@ public class SSAFYChangeMembersSeat {
 							if(num == emptySeat2-1 && !emptySeatUse2) {
 								if(n == 3) sb.append("          |");
 								
-								sb.append("         |");
+								sb.append("          |");
 								
 								n++;
 								seatCnt = 0;
@@ -223,7 +221,7 @@ public class SSAFYChangeMembersSeat {
 							if(num == emptySeat3-1 && !emptySeatUse3) {
 								if(n == 3) sb.append("          |");
 
-								sb.append("         |");
+								sb.append("          |");
 								
 								n++;
 								seatCnt = 0;
